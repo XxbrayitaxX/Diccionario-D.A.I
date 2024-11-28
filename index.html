@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links del estilo  -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- icono del diccionario  -->
+    <link rel="shortcut icon" href="assets/image/iconoP.png" type="image/x-icon">
+    <!-- titulo de la pagina de navegacion  -->
+    <title>Diccionario D.A.I</title>
+</head>
+<body>
+    <header>
+        <!-- titulo de la pagina  -->
+        <div id="parte1"><h1 id="titulo">Diccionario D.A.I</h1></div>
+
+        <div class="divAgregar">
+            <button id="add-word-button">Agregar Palabra</button>
+        </div>
+        
+        <!-- Modal para el formulario -->
+        <div id="add-word-modal" style="display: none;">
+            <div id="add-word-modal-content">
+                <form id="add-word-form">
+                    <h3>Agregar nueva palabra</h3>
+                    
+                    <label for="spanish">Español:</label>
+                    <input type="text" id="spanish" placeholder="Palabra en español" required>
+                    
+                    <label for="english">Inglés:</label>
+                    <input type="text" id="english" placeholder="Palabra en inglés" required>
+                    
+                    <label for="description">Descripción/Ejemplo:</label>
+                    <input type="text" id="description" placeholder="Descripción o ejemplo" required>
+                    
+                    <label for="image">Imagen (opcional):</label>
+                    <input type="file" id="image" accept="image/*">
+                    
+                    <fieldset class="fieldsetDIV">
+                        <legend>Selecciona una categoría:</legend>
+                        <label>
+                            <input type="radio" name="category" value="animals"> Animales
+                        </label>
+                        <label>
+                            <input type="radio" name="category" value="colors"> Colores
+                        </label>
+                        <label>
+                            <input type="radio" name="category" value="fruits"> Frutas
+                        </label>
+                        <label>
+                            <input type="radio" name="category" value="physical_descriptions"> Descripciones
+                        </label>
+                        <label>
+                            <input type="radio" name="category" value="skills"> Habilidades
+                        </label>
+                        <label>
+                            <input type="radio" name="category" value="verbs"> Verbos
+                        </label>
+                    </fieldset>
+                    <br>
+                    
+                    <button type="submit">Guardar</button>
+                    <br>
+                    <button type="button" id="close-modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+                
+        <div id="parte2">
+            <!-- los botones para selecionar el idioma de busqueda -->
+            <label class="español" for="">español</label>
+            <input type="radio" name="Traducir" id="Español">
+            <label class="ingles" for="">ingles</label>
+            <input type="radio" name="Traducir" id="Ingles">
+            <div id="order-select-container">
+                <label for="order-select">Ordenar por:</label>
+                <!-- donde se elije el orden de las palabras  -->
+                <select id="order-select">
+                    <option value="">Seleccionar</option>
+                    <option value="A-Z">A-Z</option>
+                    <option value="Z-A">Z-A</option>
+                </select>
+            </div>
+            <!-- caja de las categorias con sus botones -->
+            <div id="category-buttons">
+                <!-- Mostrar todas las categorías -->
+                <button class="category-btn" data-category="animals">animales</button>
+                <button class="category-btn" data-category="colors">colores</button>
+                <button class="category-btn" data-category="fruits">frutas</button>
+                <button class="category-btn" data-category="physical_descriptions">Descripciones</button>
+                <button class="category-btn" data-category="skills">habilidades</button>
+                <button class="category-btn" data-category="verbs">verbos</button>
+                <button class="category-btn" data-category="">Todas</button>
+            </div>
+            <!-- donde se escribe la palabra -->
+            <input type="text" placeholder="traducir palabra" style="color: white;" id="buscar">
+            <!-- el boton para traducir de español -->
+            <button id="Traducir">Traducir</button>
+        </div>
+    </header>
+    <!-- seccion donde se crean las tarjetas  -->
+    <main >
+        
+        <!-- <div class="Cart_C" >
+                    <div class="carta" id="carta">
+                        <div class="card" id="card">
+                            <div class="faceFront" id="face_front">
+                                <img src="assets/img/20230522_182000_509.jpg" class="img">
+                                <h2>Redes sociales</h2>
+                            </div>
+                            <div class="faceBack" id="face_back">
+                                <h3>Redes Sociales<h3>
+                                <p>En Proceso</p>
+                            </div>
+                        </div>
+                    </div>      
+        </div> -->
+    </main>
+    
+</body>
+<!-- sección de js  -->
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/dictionary.js"></script>
+
+</html>
